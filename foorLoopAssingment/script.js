@@ -42,3 +42,9 @@ for(let i = 1; i <= 20; i += 2)
 {
     console.log(i);
 }
+
+//queton no 8
+for(let i = 5; i <= 50; i += 5)
+{
+    console.log(i);
+}
