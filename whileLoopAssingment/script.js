@@ -6,3 +6,12 @@ while(i <= 5)
     console.log(i);
     i++;
 }
+
+//quetion number 2
+
+let j = 5;
+while(j >= 1)
+{
+    console.log(j);
+    j--;
+}
