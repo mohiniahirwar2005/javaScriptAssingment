@@ -55,3 +55,12 @@ for(let i = 1; i <= 10; i++)
 {
     console.log(i * i);
 }
+
+//quetion no 10
+for(let i = 1; i <= 10; i++)
+{
+    if(i % 3 == 0)
+    {
+        console.log(i);
+    }
+}
