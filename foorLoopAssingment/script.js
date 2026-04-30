@@ -48,3 +48,10 @@ for(let i = 5; i <= 50; i += 5)
 {
     console.log(i);
 }
+
+
+//quetion no 9
+for(let i = 1; i <= 10; i++)
+{
+    console.log(i * i);
+}
