@@ -93,7 +93,14 @@ while(i11b >= 1) {
   i11b--; 
 }
 
-
+// quetion number 12
+let count = 0;
+let i12 = 1;
+while(i12 <= 5) { 
+  count++;
+  i12++;
+}
+console.log("Loop chala:", count, "times");
 
 
 
