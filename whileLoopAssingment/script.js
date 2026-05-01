@@ -54,6 +54,13 @@ while(i7 < 5) {
 }
 
 
+// quetion number 8
+let i8 = 1;
+while(i8 <= 3) {
+  console.log(i8);
+  
+}
+
 
 
 
