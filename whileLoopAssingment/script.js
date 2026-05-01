@@ -70,6 +70,15 @@ while(i9 > 0) {
 }
 
 
+//quetion number 10
+let i10 = 1;
+while(i10 <= 3) { 
+  console.log(i10);
+  i10++;
+}
+
+
+
 
 
 
