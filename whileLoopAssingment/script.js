@@ -47,6 +47,13 @@ while(i6 <= 2) {
   i6++; 
 } 
 
+//quetion number 7
+let i7 = 10;
+while(i7 < 5) { 
+  console.log("Ye nahi chalega");
+}
+
+
 
 
 
