@@ -40,3 +40,5 @@ const addarrow = (a, b) =>a + b;
 
 console.log(addarrow(5, 6));
 
+
+
