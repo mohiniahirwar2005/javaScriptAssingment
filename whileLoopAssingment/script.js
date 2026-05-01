@@ -14,10 +14,22 @@ while(i2 >= 1) {
 
 
 
-// 3. Start from 2, keep adding 2 while number < 11
+//quetion number 3
 let i3 = 2;
 while(i3 < 11) {
   console.log(i3);
   i3 += 2;
 }
+
+
+// quetion number 4
+let i4 = 10;
+let sum = 0;
+while(i4 >= 5) {
+  sum = sum + i4;
+  i4--;
+}
+console.log("Sum =", sum); 
+
+
 
