@@ -31,12 +31,23 @@ while(i4 >= 5) {
 }
 console.log("Sum =", sum); 
 
-// 5. Role of initialization, condition, increment
+// quetion number 5
 let i5 = 1; 
 while(i5 <= 3) { 
   console.log(i5);
   i5++; p
 }
+
+
+
+// quetion number 6
+let i6 = 1; 
+while(i6 <= 2) { 
+  console.log(i6); 
+  i6++; 
+} 
+
+
 
 
 
