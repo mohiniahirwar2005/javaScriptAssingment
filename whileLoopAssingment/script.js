@@ -62,6 +62,13 @@ while(i8 <= 3) {
 }
 
 
+// quetion number 9
+let i9 = 5;
+while(i9 > 0) { 
+  console.log(i9);
+  i9++; 
+}
+
 
 
 
