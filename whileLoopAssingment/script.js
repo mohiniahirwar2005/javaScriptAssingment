@@ -78,6 +78,25 @@ while(i10 <= 3) {
 }
 
 
+//quetion number 11
+console.log("Increment:");
+let i11a = 1;
+while(i11a <= 3) {
+  console.log(i11a); // 1, 2, 3
+  i11a++; 
+}
+
+console.log("Decrement:");
+let i11b = 3;
+while(i11b >= 1) {
+  console.log(i11b); // 3, 2, 1
+  i11b--; 
+}
+
+
+
+
+
 
 
 
