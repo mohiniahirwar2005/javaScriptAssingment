@@ -20,3 +20,23 @@ console.log(add);
 console.log(add(4, 6));
 console.log(add());
 
+
+const arrowfun = () =>{
+  console.log("I Am Arrow Function");
+}
+
+arrowfun();
+
+
+//const addarrow = (a, b) =>{
+  //return a + b;
+//};
+
+//console.log(addarrow(5, 6));
+
+
+const addarrow = (a, b) =>a + b;
+
+
+console.log(addarrow(5, 6));
+
