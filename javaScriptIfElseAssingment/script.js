@@ -35,11 +35,23 @@ if (signal === "green") {
   console.log("Stop");
 }
 
+
+//q no 5
 let num3 = 5;
 
 if (num3 > 0) {
   console.log("Positive");
 } else {
   console.log("Not Positive");
+}
+
+
+// q no 6
+let num = 6;
+
+if (num % 2 === 0) {
+  console.log("Divisible by 2");
+} else {
+  console.log("Not Divisible by 2");
 }
 
