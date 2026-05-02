@@ -25,3 +25,13 @@ if (age >= 18) {
   console.log("Not Eligible");
 }
 
+
+//q no 4
+let signal = "green";
+
+if (signal === "green") {
+  console.log("Go");
+} else {
+  console.log("Stop");
+}
+
