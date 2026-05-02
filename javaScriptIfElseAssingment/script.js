@@ -47,11 +47,21 @@ if (num3 > 0) {
 
 
 // q no 6
-let num = 6;
+let num4 = 6;
 
-if (num % 2 === 0) {
+if (num4 % 2 === 0) {
   console.log("Divisible by 2");
 } else {
   console.log("Not Divisible by 2");
+}
+
+// q no 7
+
+let num5 = 3;
+
+if (num5 > 5) {
+  console.log("Greater than 5");
+} else {
+  console.log("Less or equal to 5");
 }
 
