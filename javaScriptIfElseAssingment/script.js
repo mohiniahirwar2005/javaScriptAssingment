@@ -65,6 +65,14 @@ if (num5 > 5) {
   console.log("Less or equal to 5");
 }
 
+// q no 8
 
+let num6 = 4;
+
+if (num6 % 2 === 0) {
+  console.log("Even");
+} else {
+  console.log("Odd");
+}
 
 
