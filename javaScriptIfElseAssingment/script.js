@@ -16,5 +16,12 @@ if (num1 % 2 === 0) {
   console.log("Odd");
 }
 
+//q no 3
+let age = 20;
 
+if (age >= 18) {
+  console.log("Eligible");
+} else {
+  console.log("Not Eligible");
+}
 
