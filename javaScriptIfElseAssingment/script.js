@@ -35,3 +35,11 @@ if (signal === "green") {
   console.log("Stop");
 }
 
+let num3 = 5;
+
+if (num3 > 0) {
+  console.log("Positive");
+} else {
+  console.log("Not Positive");
+}
+
