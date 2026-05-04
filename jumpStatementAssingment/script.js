@@ -73,7 +73,7 @@ console.log(totalPrice(100, 18));
 function test() {
   console.log("Start");
   return "Done";
-  console.log("This will not run"); // ignored
+  console.log("This will not run"); 
 }
 
 console.log(test());
@@ -82,14 +82,14 @@ console.log(test());
 //quetion number 11
 for (let i = 1; i <= 5; i++) {
   if (i === 3) {
-    break; // stops loop completely
+    break; 
   }
   console.log("Break loop:", i);
 }
 
 for (let i = 1; i <= 5; i++) {
   if (i === 3) {
-    continue; // skips only 3
+    continue; 
   }
   console.log("Continue loop:", i);
 }

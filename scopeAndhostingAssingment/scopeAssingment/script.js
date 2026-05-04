@@ -26,7 +26,7 @@ localExample();
 function test() {
   var x = 10;
 }
-console.log(x); // ❌ Error: x is not defined
+console.log(x); 
 */
 
 
@@ -34,7 +34,7 @@ console.log(x); // ❌ Error: x is not defined
 function letExample() {
   if (true) {
     let blockVar = "Inside block";
-    console.log(blockVar); // ✅ works
+    console.log(blockVar); 
   }
 }
 letExample();
@@ -45,14 +45,14 @@ letExample();
 if (true) {
   let y = 20;
 }
-console.log(y); // ❌ Error
+console.log(y); 
 */
 
 
 // 7. const inside block
 if (true) {
   const z = 30;
-  console.log(z); // ✅ works
+  console.log(z); 
 }
 
 
@@ -61,7 +61,7 @@ if (true) {
 if (true) {
   const a = 50;
 }
-console.log(a); // ❌ Error
+console.log(a); 
 */
 
 
@@ -73,10 +73,10 @@ function scopeDemo() {
 
   if (true) {
     let blockNum = 25;
-    console.log("Block:", blockNum); // accessible
+    console.log("Block:", blockNum); 
   }
 
-  console.log("Local:", localNum); // accessible
+  console.log("Local:", localNum); 
 }
 
 console.log("Global:", globalNum);
@@ -87,17 +87,16 @@ scopeDemo();
 function scopeTest() {
 
   if (true) {
-    var a = 10;      // function scope
-    let b = 20;      // block scope
-    const c = 30;    // block scope
+    var a = 10;      
+    let b = 20;      
+    const c = 30;    
 
     console.log("Inside block:", a, b, c);
   }
 
-  console.log("var outside block:", a); // ✅ works
+  console.log("var outside block:", a); 
 
-  // console.log(b); ❌ Error
-  // console.log(c); ❌ Error
+
 }
 
 scopeTest();
