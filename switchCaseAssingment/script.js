@@ -169,3 +169,4 @@ switch (color) {
   default:
     console.log("Other color");
 }
+
