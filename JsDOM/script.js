@@ -1,12 +1,11 @@
-function submit(){
-    console.log("Sumit Button Clicked");
-    
-    const fn = document.getElementById("fullName").value;
-    console.log(fn);
+function submit() {
+  console.log("Sumit Button Clicked");
 
-    document.getElementById("myData").innerText = fn;
-    document.getElementById("fullName").value = "";
+  const fn = document.getElementById("fullName").value;
+  console.log(fn);
 
+  document.getElementById("myData").innerText = fn;
+  document.getElementById("fullName").value = "";
 }
 
 
