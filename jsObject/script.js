@@ -171,6 +171,7 @@ FormData.map((element, idx) => {
 })
 */
  
+/*
 let ar2 = [43, 6, 74, 8, 91, 5, 23, 4, 87, 32, 6, 9, 4, 92]
 console.log(ar2.filter((val) => val > 20));
 console.log(ar2.find((val) => val > 20));
@@ -183,6 +184,34 @@ console.log(ab);
 
 console.log(ab.split(" "));
 console.log(ab.split("-"));
+*/
+
+let str = "This is a string"
+
+console.log(str.charAt(5));
+
+console.log(str.toUpperCase());
+
+console.log(str.toLowerCase());
+
+
+let a = 3.14;
+console.log(a);
+console.log(typeof a);
+let b = a.toString();
+console.log(b);
+
+
+let c = 3.14798691847730979278378;
+console.log(c.toFixed(3));
+
+let 
+
+
+
+
+
+
 
 
 
