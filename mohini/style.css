@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#mainBox {
+    display: flex;
+    border: 3px solid black;
+    background: white;
+    width: 700px;
+    height: 300px;
+}
+
+#div1 {
+    flex: 1;
+    padding: 20px;
+    border-right: 2px solid black;
+}
+
+#heading {
+    margin: 0 0 15px 0;
+    font-size: 28px;
+}
+
+#para {
+    line-height: 1.6;
+    margin: 0;
+}
+
+#div2 {
+    width: 220px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#div2Row1, #div2Row2, #div2Row3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#div2Row1 label, #div2Row2 label, #div2Row3 label {
+    font-size: 14px;
+}
+
+#bgColor, #headingColor, #paraColor {
+    width: 50px;
+    height: 30px;
+    border: 2px solid black;
+    cursor: pointer;
+    padding: 0;
+}
+
+#resetBtn {
+    padding: 8px;
+    background: #e0e0e0;
+    border: 2px solid black;
+    cursor: pointer;
+    margin-top: 10px;
+}
