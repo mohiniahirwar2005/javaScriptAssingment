@@ -1,0 +1,102 @@
+:root {
+  --color-primary: #c2410c;
+  --color-secondary: #6b7280;
+  --color-base-100: #fff8f1;
+  --color-base-200: #f5ede5;
+  --color-base-300: #e7d9c9;
+  --color-base-content: #2d1b10;
+  --color-success: #22c55e;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body{
+  background: linear-gradient(135deg,#fff8f1,#f5ede5);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.tip-card{
+  width:100%;
+  max-width:500px;
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.tip-card h1{
+  text-align:center;
+  color:var(--color-primary);
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.tip-card p{
+  text-align:center;
+  color:var(--color-secondary);
+  margin-bottom:30px;
+}
+
+.form-label{
+  font-weight:600;
+  color:var(--color-base-content);
+}
+
+.form-control,
+.form-select{
+  border:1px solid var(--color-base-300);
+  padding:12px;
+  border-radius:10px;
+}
+
+.form-control:focus,
+.form-select:focus{
+  border-color:var(--color-primary);
+  box-shadow:none;
+}
+
+.btn-calculate{
+  background:var(--color-primary);
+  color:white;
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  font-weight:600;
+  margin-top:15px;
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.btn-calculate:hover{
+  background:#a53408;
+}
+
+.result-box{
+  margin-top:25px;
+  background:var(--color-base-200);
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  display:none;
+}
+
+.result-box h3{
+  color:var(--color-primary);
+  margin-bottom:10px;
+}
+
+.amount{
+  font-size:32px;
+  font-weight:700;
+  color:var(--color-success);
+}
