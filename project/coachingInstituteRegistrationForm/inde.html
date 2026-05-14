@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" href="style.css" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -11,227 +14,369 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
-
-    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div class="container my-5">
-      <h2 class="text-center mb-4">Coaching Institute Registration Form</h2>
 
-      <form id="registrationForm" novalidate>
-        <div class="form">
-          <h4 class="title">Personal Information</h4>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Full Name</label>
-              <input type="text" class="form-control" id="fullName" />
-              <div class="error" id="fullNameError"></div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Email Address</label>
-              <input type="email" class="form-control" id="email" />
-              <div class="error" id="emailError"></div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Mobile Number</label>
-              <input
-                type="number"
-                class="form-control"
-                id="mobile"
-                maxlength="10"
-              />
-              <div class="error" id="mobileError"></div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Date of Birth</label>
-              <input type="date" class="form-control" id="dob" />
-              <div class="error" id="dobError"></div>
-            </div>
+  <body class="bg-light">
+    <header>
+      <div class="bg-primary p-3 text-center shadow">
+        <h2 class="text-light">Coaching Institute Registration Form</h2>
+      </div>
+    </header>
 
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Gender</label><br />
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="male"
-                  value="Male"
-                />
-                <label class="form-check-label" for="male">Male</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="female"
-                  value="Female"
-                />
-                <label class="form-check-label" for="female">Female</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="other"
-                  value="Other"
-                />
-                <label class="form-check-label" for="other">Other</label>
-              </div>
-              <div class="error" id="genderError"></div>
-            </div>
-          </div>
-        </div>
+    <main>
+      <div class="container my-4 p-5 bg-light rounded border shadow">
+        <form id="registrationFrom">
+          <section class="bg-white p-4 rounded border mb-4">
+            <h4 class="mb-3 text-primary">Personal Information</h4>
 
-        <div class="form">
-          <h4 class="title">Academic Details</h4>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Last Completed Qualification</label>
-              <select class="form-select" id="qualification">
-                <option value="">Select Qualification</option>
-                <option value="10th">10th</option>
-                <option value="12th">12th</option>
-                <option value="Graduate">Graduate</option>
-                <option value="Postgraduate">Postgraduate</option>
-              </select>
-              <div class="error" id="qualificationError"></div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Percentage/Grade</label>
+            <div class="p-2 mt-2">
+              <label for="fullName" class="form-label fw-bold">
+                Full Name
+              </label>
+
               <input
                 type="text"
+                name="fullName"
+                id="fullName"
                 class="form-control"
-                id="percentage"
+                placeholder="Rahul Kumar"
+              />
+
+              <span class="text-danger small" id="fullNameError"></span>
+            </div>
+
+            <div class="p-2 mt-2">
+              <label for="email" class="form-label fw-bold">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-control"
+                placeholder="rahulkumar@example.com"
+              />
+
+              <span class="text-danger small" id="emailError"></span>
+            </div>
+
+            <div class="p-2 mt-2">
+              <label for="phone" class="form-label fw-bold">
+                Mobile Number
+              </label>
+
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                class="form-control"
+                placeholder="9876543210"
+              />
+
+              <span class="text-danger small" id="phoneError"></span>
+            </div>
+
+            <div class="p-2 mt-2">
+              <label for="dob" class="form-label fw-bold">
+                Date of Birth
+              </label>
+
+              <input type="date" name="dob" id="dob" class="form-control" />
+
+              <span class="text-danger small" id="dobError"></span>
+            </div>
+
+            <div class="p-2 mt-3 d-flex gap-4 align-items-center flex-wrap">
+              <label class="form-label fw-bold mb-0"> Gender </label>
+
+              <div>
+                <input type="radio" name="gender" id="male" value="male" />
+
+                <span>Male</span>
+              </div>
+
+              <div>
+                <input type="radio" name="gender" id="female" value="female" />
+
+                <span>Female</span>
+              </div>
+
+              <div>
+                <input type="radio" name="gender" id="others" value="others" />
+
+                <span>Others</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white p-4 rounded border mb-4">
+            <h4 class="mb-3 text-primary">Academic Details</h4>
+
+            <div class="p-2 mt-2">
+              <label for="qualification" class="form-label fw-bold">
+                Last Completed Qualification
+              </label>
+
+              <select
+                name="qualification"
+                id="qualification"
+                class="form-select"
+              >
+                <option value="">Select Qualification</option>
+
+                <option value="10th">10th</option>
+
+                <option value="12th">12th</option>
+
+                <option value="graduate">Graduate</option>
+
+                <option value="postgraduate">Postgraduate</option>
+
+                <option value="diploma">Diploma</option>
+              </select>
+
+              <span class="text-danger small" id="qualificationError"></span>
+            </div>
+
+            <div class="p-2 mt-2">
+              <label for="marks" class="form-label fw-bold">
+                Percentage / Grade
+              </label>
+
+              <input
+                type="text"
+                name="marks"
+                id="marks"
+                class="form-control"
                 placeholder="85 or A"
               />
-              <div class="error" id="percentageError"></div>
-            </div>
-          </div>
-        </div>
 
-        <div class="form">
-          <h4 class="title">Course Information</h4>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Preferred Course</label>
-              <select class="form-select" id="course">
+              <span class="text-danger small" id="marksError"></span>
+            </div>
+          </section>
+
+          <section class="bg-white p-4 rounded border mb-4">
+            <h4 class="mb-3 text-primary">Course Information</h4>
+
+            <div class="p-2 mt-2">
+              <label for="course" class="form-label fw-bold">
+                Preferred Course
+              </label>
+
+              <select name="course" id="course" class="form-select">
                 <option value="">Select Course</option>
-                <option value="IIT_JEE">IIT_JEE</option>
-                <option value="NEET">NEET</option>
-                <option value="Banking Exams,">Banking Exams</option>
-                <option value="UPSC">UPSC</option>
-              </select>
-              <div class="error" id="courseError"></div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Batch Timing Preference</label>
-              <select class="form-select" id="batch">
-                <option value="">Select Batch</option>
-                <option value="Morning">Morning</option>
-                <option value="Afternoon">Afternoon</option>
-                <option value="Evening">Evening</option>
-                <option value="Weekend">Weekend</option>
-              </select>
-              <div class="error" id="batchError"></div>
-            </div>
-          </div>
-        </div>
 
-        <div class="form">
-          <h4 class="title">Address</h4>
-          <div class="row">
-            <div class="col-12 mb-3">
-              <label class="form-label">Residential Address</label>
-              <textarea class="form-control" id="address" rows="2"></textarea>
-              <div class="error" id="addressError"></div>
+                <option value="iit-jee">IIT-JEE</option>
+
+                <option value="neet">NEET</option>
+
+                <option value="banking">Banking Exams</option>
+
+                <option value="upsc">UPSC</option>
+
+                <option value="ssc">SSC</option>
+              </select>
+
+              <span class="text-danger small" id="courseError"></span>
             </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">City</label>
-              <input type="text" class="form-control" id="city" />
-              <div class="error" id="cityError"></div>
+
+            <div class="p-2 mt-3">
+              <label class="form-label fw-bold">
+                Batch Timing Preference
+              </label>
+
+              <div class="d-flex gap-4 flex-wrap mt-2">
+                <div>
+                  <input
+                    type="checkbox"
+                    name="timings"
+                    id="morning"
+                    value="morning"
+                  />
+
+                  <span>Morning</span>
+                </div>
+
+                <div>
+                  <input
+                    type="checkbox"
+                    name="timings"
+                    id="afternoon"
+                    value="afternoon"
+                  />
+
+                  <span>Afternoon</span>
+                </div>
+
+                <div>
+                  <input
+                    type="checkbox"
+                    name="timings"
+                    id="evening"
+                    value="evening"
+                  />
+
+                  <span>Evening</span>
+                </div>
+
+                <div>
+                  <input
+                    type="checkbox"
+                    name="timings"
+                    id="weekend"
+                    value="weekend"
+                  />
+
+                  <span>Weekend</span>
+                </div>
+              </div>
+
+              <span class="text-danger small" id="timingsError"></span>
             </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Pin Code</label>
+          </section>
+
+          <section class="bg-white p-4 rounded border mb-4">
+            <h4 class="mb-3 text-primary">Address Details</h4>
+
+            <div class="p-2 mt-2">
+              <label for="address" class="form-label fw-bold">
+                Residential Address
+              </label>
+
+              <textarea
+                name="address"
+                id="address"
+                class="form-control"
+                placeholder="123, Main Street, Delhi"
+                rows="4"
+              ></textarea>
+
+              <span class="text-danger small" id="addressError"></span>
+            </div>
+
+            <div class="p-2 mt-2">
+              <label for="city" class="form-label fw-bold"> City </label>
+
               <input
                 type="text"
+                name="city"
+                id="city"
                 class="form-control"
-                id="pincode"
-                maxlength="6"
+                placeholder="Delhi"
               />
-              <div class="error" id="pincodeError"></div>
-            </div>
-          </div>
-        </div>
 
-        <div class="form">
-          <h4 class="title">Guardian Details</h4>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Guardians Full Name</label>
-              <input type="text" class="form-control" id="guardianName" />
-              <div class="error" id="guardianNameError"></div>
+              <span class="text-danger small" id="cityError"></span>
             </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Guardians Contact Number</label>
+
+            <div class="p-2 mt-2">
+              <label for="pin" class="form-label fw-bold"> Pin Code </label>
+
               <input
                 type="text"
+                name="pin"
+                id="pin"
                 class="form-control"
-                id="guardianContact"
-                maxlength="10"
+                placeholder="110011"
               />
-              <div class="error" id="guardianContactError"></div>
-            </div>
-          </div>
-        </div>
 
-        <div class="form">
-          <h4 class="title">Additional Information</h4>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label class="form-label">How did you hear about us? *</label>
-              <select class="form-select" id="source">
+              <span class="text-danger small" id="pinError"></span>
+            </div>
+          </section>
+
+          <section class="bg-white p-4 rounded border mb-4">
+            <h4 class="mb-3 text-primary">Guardian Details</h4>
+
+            <div class="p-2 mt-2">
+              <label for="guardianName" class="form-label fw-bold">
+                Guardian Full Name
+              </label>
+
+              <input
+                type="text"
+                id="guardianName"
+                class="form-control"
+                placeholder="Suresh Kumar"
+              />
+
+              <span class="text-danger small" id="guardianNameError"></span>
+            </div>
+
+            <div class="p-2 mt-2">
+              <label for="guardianPhone" class="form-label fw-bold">
+                Guardian Contact Number
+              </label>
+
+              <input
+                type="text"
+                id="guardianPhone"
+                class="form-control"
+                placeholder="9876543211"
+              />
+
+              <span class="text-danger small" id="guardianPhoneError"></span>
+            </div>
+          </section>
+
+          <section class="bg-white p-4 rounded border mb-4">
+            <h4 class="mb-3 text-primary">Additional Information</h4>
+
+            <div class="p-2 mt-2">
+              <label for="reference" class="form-label fw-bold">
+                How did you hear about us?
+              </label>
+
+              <select id="reference" class="form-select">
                 <option value="">Select Option</option>
-                <option value="Friends">Friends</option>
-                <option value="Online Ad">Online Ad</option>
-                <option value="Newspaper">Newspaper</option>
-                <option value="Social Media">Social Media</option>
-                <option value="Other">Other</option>
+
+                <option value="friends">Friends</option>
+
+                <option value="onlineAd">Online Ad</option>
+
+                <option value="newspaper">Newspaper</option>
+
+                <option value="socialMedia">Social Media</option>
+
+                <option value="other">Other</option>
               </select>
-              <div class="error" id="sourceError"></div>
+
+              <span class="text-danger small" id="referenceError"></span>
             </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Special Requirements</label>
-              <textarea class="form-control" id="special" rows="2"></textarea>
+
+            <div class="p-2 mt-2">
+              <label for="specialRequirement" class="form-label fw-bold">
+                Special Requirements
+              </label>
+
+              <textarea
+                id="specialRequirement"
+                class="form-control"
+                placeholder="Any additional requirements..."
+                rows="4"
+              ></textarea>
             </div>
+          </section>
+
+          <div class="d-flex justify-content-between">
+            <button type="reset" class="btn btn-secondary px-4">Clear</button>
+
+            <button type="submit" class="btn btn-primary px-4">Submit</button>
           </div>
-        </div>
-
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary btn-lg px-5">
-            Submit Registration
-          </button>
-        </div>
-      </form>
-
-      <div id="Msg" class="alert alert-success mt-4 text-center">
-        <h4>Registration Successful!</h4>
-        <p>Thank you for registering. We will contact you soon.</p>
+        </form>
       </div>
-    </div>
+    </main>
 
-    <!-- Scripts -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+
     <script src="script.js"></script>
   </body>
 </html>
