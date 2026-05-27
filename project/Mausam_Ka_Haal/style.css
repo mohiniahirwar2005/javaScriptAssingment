@@ -1,0 +1,53 @@
+body {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Arial, sans-serif;
+}
+
+.weather-card {
+  background: white;
+
+  width: 350px;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.weather-icon {
+  width: 100px;
+}
+
+.temp {
+  font-size: 40px;
+
+  font-weight: bold;
+}
+
+.details {
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+
+  font-weight: bold;
+}
+
+button {
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.03);
+}

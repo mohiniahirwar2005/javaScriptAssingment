@@ -1,0 +1,62 @@
+[
+  {
+    "Country": "UNITED STATES",
+    "Currency_Name": "US Dollar",
+    "Currency_Code": "usd",
+    "Country_Code": "US"
+  },
+  {
+    "Country": "INDIA",
+    "Currency_Name": "Indian Rupee",
+    "Currency_Code": "inr",
+    "Country_Code": "IN"
+  },
+  {
+    "Country": "UNITED KINGDOM",
+    "Currency_Name": "Pound Sterling",
+    "Currency_Code": "gbp",
+    "Country_Code": "GB"
+  },
+  {
+    "Country": "EUROPEAN UNION",
+    "Currency_Name": "Euro",
+    "Currency_Code": "eur",
+    "Country_Code": "EU"
+  },
+  {
+    "Country": "JAPAN",
+    "Currency_Name": "Japanese Yen",
+    "Currency_Code": "jpy",
+    "Country_Code": "JP"
+  },
+  {
+    "Country": "CANADA",
+    "Currency_Name": "Canadian Dollar",
+    "Currency_Code": "cad",
+    "Country_Code": "CA"
+  },
+  {
+    "Country": "AUSTRALIA",
+    "Currency_Name": "Australian Dollar",
+    "Currency_Code": "aud",
+    "Country_Code": "AU"
+  },
+  {
+    "Country": "CHINA",
+    "Currency_Name": "Chinese Yuan",
+    "Currency_Code": "cny",
+    "Country_Code": "CN"
+  },
+  {
+    "Country": "PAKISTAN",
+    "Currency_Name": "Pakistani Rupee",
+    "Currency_Code": "pkr",
+    "Country_Code": "PK"
+  },
+  {
+    "Country": "UAE",
+    "Currency_Name": "Dirham",
+    "Currency_Code": "aed",
+    "Country_Code": "AE"
+  }
+]
