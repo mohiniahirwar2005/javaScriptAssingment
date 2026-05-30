@@ -1,0 +1,68 @@
+{
+  "cities": [
+    {
+      "name": "Bhopal",
+      "main": {
+        "temp": 32,
+        "humidity": 60
+      },
+      "weather": [
+        {
+          "description": "Clear Sky",
+          "icon": "01d"
+        }
+      ],
+      "wind": {
+        "speed": 4.5
+      }
+    },
+    {
+      "name": "Indore",
+      "main": {
+        "temp": 34,
+        "humidity": 55
+      },
+      "weather": [
+        {
+          "description": "Sunny",
+          "icon": "01d"
+        }
+      ],
+      "wind": {
+        "speed": 5.2
+      }
+    },
+    {
+      "name": "Delhi",
+      "main": {
+        "temp": 38,
+        "humidity": 45
+      },
+      "weather": [
+        {
+          "description": "Haze",
+          "icon": "50d"
+        }
+      ],
+      "wind": {
+        "speed": 6.1
+      }
+    },
+    {
+      "name": "Mumbai",
+      "main": {
+        "temp": 30,
+        "humidity": 78
+      },
+      "weather": [
+        {
+          "description": "Cloudy",
+          "icon": "03d"
+        }
+      ],
+      "wind": {
+        "speed": 3.8
+      }
+    }
+  ]
+}

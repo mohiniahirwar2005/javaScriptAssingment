@@ -1,34 +1,82 @@
-const API_KEY = "ebf5692cda366499b230e31cee1101ca";
+const apiKey = "038b0d5b83adb9cdaab0e11f16d40445";
 
-async function getWeather() {
-  const cityName = document.getElementById("cityName").value.trim();
+document
+  .getElementById("searchBtn")
+  .addEventListener("click", getWeather);
 
-  const { Lattitude, Longitude } = await getGeoLocation(cityName);
+function getWeather() {
 
-  //   console.log({ Lattitude, Longitude });
+  const city = document
+    .getElementById("cityInput")
+    .value
+    .trim();
 
-  const WEATHER_API = `https://api.openweathermap.org/data/2.5/weather?lat=${Lattitude}&lon=${Longitude}&appid=${API_KEY}`;
+  if (city === "") {
+    alert("Please Enter City Name");
+    return;
+  }
 
-  const response = await fetch(WEATHER_API);
-  const data = await response.json();
+  // Geocoding API
+  fetch(
+    `https://api.openweathermap.org/geo/1.0/direct?q=${city},IN&limit=5&appid=${apiKey}`
+  )
+    .then(response => response.json())
 
-  //console.log(data);
+    .then(geoData => {
 
-  const temperature = data.main.temp - 273.15;
+      if (!geoData || geoData.length === 0) {
+        alert("City Not Found");
+        return;
+      }
 
-  document.getElementById("Temperature").innerText = temperature.toFixed(2);
-}
+      const lat = geoData[0].lat;
+      const lon = geoData[0].lon;
 
-async function getGeoLocation(city) {
-  const GEO_LOC_API = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`;
+      // Weather API
+      return fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
+      );
+    })
 
-  const response = await fetch(GEO_LOC_API);
-  const data = await response.json();
+    .then(response => {
 
-  //   console.log(data);
+      if (!response) return;
 
-  const Lattitude = data[0].lat;
-  const Longitude = data[0].lon;
+      return response.json();
+    })
 
-  return { Lattitude, Longitude };
+    .then(data => {
+
+      if (!data) return;
+
+      document
+        .getElementById("weatherResult")
+        .classList.remove("d-none");
+
+      document.getElementById("city").innerText =
+        data.name;
+
+      document.getElementById("temp").innerText =
+        `🌡 Temperature: ${data.main.temp} °C`;
+
+      document.getElementById("humidity").innerText =
+        `💧 Humidity: ${data.main.humidity}%`;
+
+      document.getElementById("description").innerText =
+        `☁ Weather: ${data.weather[0].description}`;
+
+      document.getElementById("wind").innerText =
+        `🌬 Wind Speed: ${data.wind.speed} m/s`;
+
+      document.getElementById("icon").src =
+        `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+      document.getElementById("icon").alt =
+        data.weather[0].description;
+    })
+
+    .catch(error => {
+      console.log(error);
+      alert("Weather data load nahi ho paya.");
+    });
 }
