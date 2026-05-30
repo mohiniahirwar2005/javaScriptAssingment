@@ -1,0 +1,12 @@
+body{
+    background:#f4f4f4;
+}
+
+.card{
+    max-width:500px;
+    margin:auto;
+}
+
+#icon{
+    width:100px;
+}

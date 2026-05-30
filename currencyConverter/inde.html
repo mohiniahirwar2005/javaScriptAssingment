@@ -1,158 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Currency Converter</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-  />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
 
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-9">
+          <div class="card shadow-lg border-0 p-4 converter-card">
+            <h1 class="text-center mb-4 title">Currency Converter</h1>
 
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-7 col-md-9">
+            <div class="mb-4">
+              <label class="form-label fw-bold"> Enter Amount </label>
 
-        <div class="card shadow-lg border-0 p-4 converter-card">
+              <input
+                type="number"
+                id="orgAmount"
+                class="form-control form-control-lg"
+                placeholder="Enter amount"
+              />
 
-          <h1 class="text-center mb-4 title">
-            Currency Converter
-          </h1>
-
-          
-          <div class="mb-4">
-            <label class="form-label fw-bold">
-              Enter Amount
-            </label>
-
-            <input
-              type="number"
-              id="orgAmount"
-              class="form-control form-control-lg"
-              placeholder="Enter amount"
-            />
-
-            <small id="amountError" class="error-text"></small>
-          </div>
-
-          
-          <div class="row align-items-center g-3">
-
-            
-            <div class="col-md-5">
-
-              <div class="flag-box mb-2">
-                <img
-                  id="flag1"
-                  src=""
-                  alt="flag"
-                  class="flag-img"
-                />
-              </div>
-
-              <label class="form-label fw-bold">
-                From
-              </label>
-
-              <select
-                id="country1"
-                class="form-select form-select-lg"
-              >
-                <option value="">Select Country</option>
-              </select>
-
-              <small id="fromError" class="error-text"></small>
+              <small id="amountError" class="error-text"></small>
             </div>
 
-            
-            <div class="col-md-2 text-center">
+            <div class="row align-items-center g-3">
+              <div class="col-md-5">
+                <div class="flag-box mb-2">
+                  <img id="flag1" src="" alt="flag" class="flag-img" />
+                </div>
 
-              <button
-                id="swapBtn"
-                class="btn btn-dark swap-btn"
-              >
-                <i class="bi bi-arrow-left-right"></i>
+                <label class="form-label fw-bold"> From </label>
+
+                <select id="country1" class="form-select form-select-lg">
+                  <option value="">Select Country</option>
+                </select>
+
+                <small id="fromError" class="error-text"></small>
+              </div>
+
+              <div class="col-md-2 text-center">
+                <button id="swapBtn" class="btn btn-dark swap-btn">
+                  <i class="bi bi-arrow-left-right"></i>
+                </button>
+              </div>
+
+              <div class="col-md-5">
+                <div class="flag-box mb-2">
+                  <img id="flag2" src="" alt="flag" class="flag-img" />
+                </div>
+
+                <label class="form-label fw-bold"> To </label>
+
+                <select id="country2" class="form-select form-select-lg">
+                  <option value="">Select Country</option>
+                </select>
+
+                <small id="toError" class="error-text"></small>
+              </div>
+            </div>
+
+            <div class="d-grid mt-4">
+              <button id="convertBtn" class="btn btn-primary btn-lg">
+                Convert
               </button>
-
             </div>
 
-          
-            <div class="col-md-5">
-
-              <div class="flag-box mb-2">
-                <img
-                  id="flag2"
-                  src=""
-                  alt="flag"
-                  class="flag-img"
-                />
-              </div>
-
-              <label class="form-label fw-bold">
-                To
-              </label>
-
-              <select
-                id="country2"
-                class="form-select form-select-lg"
-              >
-                <option value="">Select Country</option>
-              </select>
-
-              <small id="toError" class="error-text"></small>
+            <div id="loading" class="text-center mt-3 d-none">
+              <div class="spinner-border text-primary"></div>
+              <p class="mt-2">Converting...</p>
             </div>
 
+            <div id="resultBox" class="result-box mt-4 text-center">
+              <h3 id="newAmount">0.00</h3>
+              <p id="rateText"></p>
+            </div>
+
+            <div
+              id="generalError"
+              class="text-danger text-center mt-3 fw-bold"
+            ></div>
           </div>
-
-          
-          <div class="d-grid mt-4">
-            <button
-              id="convertBtn"
-              class="btn btn-primary btn-lg"
-            >
-              Convert
-            </button>
-          </div>
-
-         
-          <div
-            id="loading"
-            class="text-center mt-3 d-none"
-          >
-            <div class="spinner-border text-primary"></div>
-            <p class="mt-2">Converting...</p>
-          </div>
-
-          
-          <div
-            id="resultBox"
-            class="result-box mt-4 text-center"
-          >
-            <h3 id="newAmount">0.00</h3>
-            <p id="rateText"></p>
-          </div>
-
-         
-          <div
-            id="generalError"
-            class="text-danger text-center mt-3 fw-bold"
-          ></div>
-
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

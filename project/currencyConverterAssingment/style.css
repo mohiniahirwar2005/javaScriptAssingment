@@ -1,0 +1,58 @@
+body {
+  background: linear-gradient(135deg, #2166e5, #5d42d6);
+}
+
+.converter-box {
+  background: #f2f2f2;
+  width: 700px;
+  padding: 30px;
+  border-radius: 25px;
+}
+
+.title {
+  color: #2166e5;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.flag {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.swap-btn {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: #20262f;
+  color: white;
+  font-size: 22px;
+}
+
+.result-box {
+  background: #e7e7e7;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.result-box h2 {
+  color: green;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .converter-box {
+    width: 100%;
+  }
+
+  .swap-btn {
+    margin: 20px 0;
+  }
+}

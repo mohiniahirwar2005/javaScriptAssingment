@@ -20,34 +20,25 @@ const generalError = document.getElementById("generalError");
 
 const swapBtn = document.getElementById("swapBtn");
 
-
 async function loadCountries() {
-
   try {
-
     const response = await fetch("currency.json");
     const data = await response.json();
 
     const uniqueCountries = [];
 
     data.forEach((item) => {
-
       if (
         item.Currency_Code &&
-        !uniqueCountries.some(
-          (country) =>
-            country.Country === item.Country
-        )
+        !uniqueCountries.some((country) => country.Country === item.Country)
       ) {
         uniqueCountries.push(item);
       }
     });
 
     uniqueCountries.forEach((item) => {
-
       const option1 = document.createElement("option");
-      option1.value =
-        `${item.Currency_Code.toLowerCase()},${item.Country_Code}`;
+      option1.value = `${item.Currency_Code.toLowerCase()},${item.Country_Code}`;
 
       option1.textContent = item.Country;
 
@@ -57,38 +48,29 @@ async function loadCountries() {
       country2.appendChild(option2);
     });
 
-    
     country1.value = "usd,US";
     country2.value = "inr,IN";
 
     updateFlag(country1, flag1);
     updateFlag(country2, flag2);
-
   } catch (error) {
-
-    generalError.innerText =
-      "Failed to load country list.";
+    generalError.innerText = "Failed to load country list.";
   }
 }
 
-
 function updateFlag(select, img) {
-
   const value = select.value;
 
   if (!value) return;
 
   const countryCode = value.split(",")[1];
 
-  img.src =
-    `https://flagsapi.com/${countryCode}/flat/64.png`;
+  img.src = `https://flagsapi.com/${countryCode}/flat/64.png`;
 
   img.onerror = () => {
-    img.src =
-      "https://cdn-icons-png.flaticon.com/512/44/44386.png";
+    img.src = "https://cdn-icons-png.flaticon.com/512/44/44386.png";
   };
 }
-
 
 country1.addEventListener("change", () => {
   updateFlag(country1, flag1);
@@ -104,9 +86,7 @@ amountInput.addEventListener("input", () => {
   amountError.innerText = "";
 });
 
-
 function validateInputs() {
-
   let valid = true;
 
   fromError.innerText = "";
@@ -115,33 +95,27 @@ function validateInputs() {
   generalError.innerText = "";
 
   if (!country1.value) {
-    fromError.innerText =
-      "Please select a 'From' country.";
+    fromError.innerText = "Please select a 'From' country.";
     valid = false;
   }
 
   if (!country2.value) {
-    toError.innerText =
-      "Please select a 'To' country.";
+    toError.innerText = "Please select a 'To' country.";
     valid = false;
   }
 
   if (!amountInput.value) {
-    amountError.innerText =
-      "Please enter an amount.";
+    amountError.innerText = "Please enter an amount.";
     valid = false;
   } else if (Number(amountInput.value) <= 0) {
-    amountError.innerText =
-      "Amount must be greater than zero.";
+    amountError.innerText = "Amount must be greater than zero.";
     valid = false;
   }
 
   return valid;
 }
 
-
 async function convertCurrency() {
-
   if (!validateInputs()) return;
 
   loading.classList.remove("d-none");
@@ -152,67 +126,46 @@ async function convertCurrency() {
   rateText.innerText = "";
 
   try {
-
     const amount = Number(amountInput.value);
 
-    const fromCurrency =
-      country1.value.split(",")[0];
+    const fromCurrency = country1.value.split(",")[0];
 
-    const toCurrency =
-      country2.value.split(",")[0];
+    const toCurrency = country2.value.split(",")[0];
 
-    // Same Currency
+    
     if (fromCurrency === toCurrency) {
+      newAmount.innerText = `${amount.toFixed(2)} ${toCurrency.toUpperCase()}`;
 
-      newAmount.innerText =
-        `${amount.toFixed(2)} ${toCurrency.toUpperCase()}`;
-
-      rateText.innerText =
-        `1 ${fromCurrency.toUpperCase()} = 1 ${toCurrency.toUpperCase()}`;
+      rateText.innerText = `1 ${fromCurrency.toUpperCase()} = 1 ${toCurrency.toUpperCase()}`;
 
       return;
     }
 
     const response = await fetch(
-      `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${fromCurrency}.json`
+      `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${fromCurrency}.json`,
     );
 
     const data = await response.json();
 
-    const rate =
-      data[fromCurrency][toCurrency];
+    const rate = data[fromCurrency][toCurrency];
 
     const result = amount * rate;
 
-    newAmount.innerText =
-      `${result.toFixed(2)} ${toCurrency.toUpperCase()}`;
+    newAmount.innerText = `${result.toFixed(2)} ${toCurrency.toUpperCase()}`;
 
-    rateText.innerText =
-      `1 ${fromCurrency.toUpperCase()} = ${rate.toFixed(2)} ${toCurrency.toUpperCase()}`;
-
+    rateText.innerText = `1 ${fromCurrency.toUpperCase()} = ${rate.toFixed(2)} ${toCurrency.toUpperCase()}`;
   } catch (error) {
-
-    generalError.innerText =
-      "Something went wrong. Please try again.";
-  }
-
-  finally {
-
+    generalError.innerText = "Something went wrong. Please try again.";
+  } finally {
     loading.classList.add("d-none");
 
     convertBtn.innerText = "Convert";
   }
 }
 
-
-convertBtn.addEventListener(
-  "click",
-  convertCurrency
-);
-
+convertBtn.addEventListener("click", convertCurrency);
 
 swapBtn.addEventListener("click", () => {
-
   const temp = country1.value;
 
   country1.value = country2.value;
@@ -226,6 +179,5 @@ swapBtn.addEventListener("click", () => {
     convertCurrency();
   }
 });
-
 
 loadCountries();
