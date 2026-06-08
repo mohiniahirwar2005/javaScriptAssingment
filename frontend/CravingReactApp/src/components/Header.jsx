@@ -1,28 +1,39 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 function Header() {
   return (
-    <>
-      <div className="bg-primary-subtle p-2 d-flex justify-content-between align-items-center">
-        <div className="text-primary fs-4 fw-bold">My Company</div>
+    <nav
+      className="navbar navbar-expand-lg px-4"
+      style={{ backgroundColor: "#c94c06" }}
+    >
+      <div className="container-fluid">
 
-        <div className="d-flex gap-4">
-          <Link to={"/"}>Home</Link>
-          <Link to={"/about"}>About</Link>
-          <Link to={"/product"}>Product</Link>
-          <Link to={"/contact-us"}>Contact Us</Link>
+        <Link to="/" className="navbar-brand">
+          <img
+            src={logo}
+            alt="Craving Logo"
+            className="logo"
+          />
+        </Link>
+
+        <div className="ms-auto d-flex align-items-center gap-3">
+          <Link
+            to="/login"
+            className="text-white text-decoration-none fw-semibold"
+          >
+            Login
+          </Link>
+
+          <Link to="/register">
+            <button className="btn btn-light text-danger btn-sm">
+              Register
+            </button>
+          </Link>
         </div>
 
-        <div className="d-flex gap-3">
-          <Link to={"/login"}>
-            <button className="btn btn-outline-primary">Login</button>
-          </Link>
-          <Link to={"/register"}>
-            <button className="btn btn-primary">Register</button>
-          </Link>
-        </div>
       </div>
-    </>
+    </nav>
   );
 }
 

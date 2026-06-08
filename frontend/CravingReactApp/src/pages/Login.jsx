@@ -1,51 +1,86 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import bgImage from "../assets/login.jpeg";
 
 function Login() {
-  const [userName, setUserName] = useState("");
-  const [passward, setPassward] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("userName :", userName);
-    console.log("passward :", passward);
 
-    
+    console.log(email);
+    console.log(password);
   };
+
   return (
-    <>
-      <div className="d-flex justify-content-center">
-        <div className="border p-3 w-50 mt-5 bg-light shadow rounded">
-          <h1 className="text-center">Welcome Back!!!</h1>
-          <br />
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="userName">Username</label>
-            <input
-              type="text"
-              name="userName"
-              className="form-control"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-            />
-            <br />
-            <label htmlFor="passward">Passward</label>
-            <input
-              type="passward"
-              name="passward"
-              className="form-control"
-              value={passward}
-              onChange={(e) => setPassward(e.target.value)}
-            />
-            <br />
-            <div className="float-end">
-              <button type="submit" className="btn btn-primary">
-                Login
-              </button>
+    <div
+      className="auth-bg login-page"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+      }}
+    >
+      <div className="auth-card">
+
+        <h1>Welcome Back</h1>
+
+        <p>Login to your Cravings account</p>
+
+        <form onSubmit={handleSubmit}>
+
+          <label>Email</label>
+
+          <input
+            type="email"
+            className="form-control"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <label className="mt-3">Password</label>
+
+          <input
+            type="password"
+            className="form-control"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <div className="d-flex justify-content-between mt-3">
+            <div>
+              <input type="checkbox" /> Remember me
             </div>
-          </form>
-        </div>
+
+            <a href="#">Forgot Password?</a>
+          </div>
+
+          <button
+            type="submit"
+            className="btn login-btn mt-4"
+          >
+            Login
+          </button>
+
+        </form>
+
+        <hr />
+
+        <p className="text-center">
+          Don't have an account?
+        </p>
+
+        <Link
+          to="/register"
+          className="register-link"
+        >
+          Create an account
+        </Link>
+
       </div>
-    </>
+    </div>
   );
 }
 
-export default Login
+export default Login;
