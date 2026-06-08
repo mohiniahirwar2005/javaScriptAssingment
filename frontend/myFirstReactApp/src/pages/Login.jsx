@@ -1,15 +1,15 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [userName, setUserName] = useState("");
-  const [passward, setPassward] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("userName :", userName);
-    console.log("passward :", passward);
 
-    
+    console.log("userName :", userName);
+    console.log("password :", password);
   };
   return (
     <>
@@ -27,21 +27,25 @@ function Login() {
               onChange={(e) => setUserName(e.target.value)}
             />
             <br />
-            <label htmlFor="passward">Passward</label>
+            <label htmlFor="password">Password</label>
             <input
-              type="passward"
-              name="passward"
+              type="text"
+              name="password"
               className="form-control"
-              value={passward}
-              onChange={(e) => setPassward(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <br />
-            <div className="float-end">
+            <div className="text-end">
               <button type="submit" className="btn btn-primary">
                 Login
               </button>
             </div>
           </form>
+          <hr />
+          <p>
+            Don't have an account? <Link to="/register">Register here</Link>
+          </p>
         </div>
       </div>
     </>
